@@ -9,7 +9,14 @@ def encode(password):
 
     return number_list
 
+def decode(encoded):
+    decoded = ""
+    for char in encoded:
+        decoded += str(int(char) - 3)
+    return decoded
+
 
 if __name__ == "__main__":
     password = input("Please enter your password to encode:")
-    encode(password)
+    print(encode(password))
+    print(decode(encode(password)))
